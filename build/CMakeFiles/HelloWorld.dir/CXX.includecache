@@ -6,15 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/mininet/ProgramCPP/HelloWorld/login.cpp
+/home/mininet/ProgramCPP/HelloWorld/consolePrinter.cpp
 iostream
--
-string
--
-fstream
--
-sstream
--
-vector
 -
 

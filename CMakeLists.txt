@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD 11)
 find_package(OpenSSL REQUIRED)
 
 # Add the executable
-add_executable(HelloWorld main.cpp consolePrinter.cpp login.cpp hash.cpp) 
+add_executable(HelloWorld main.cpp consolePrinter.cpp login.cpp hash.cpp createAccount.cpp)  
 
 
 

@@ -27,6 +27,26 @@ void requestPassword() {
 
 }
 
+void createAccountPrompts(int i){
+    if (i == 1 ){
+        std::cout << "      ******************************************" << std::endl;
+        std::cout << "     WELCOME TO BANK OF CPP! PLEASE CREATE ACCOUNT" << std::endl;
+        std::cout << "      ******************************************" << std::endl;
+        std::cout << "      Please Create Your Username: " ;
+    }
+    else if (i == 2){
+        std::cout << "      ******************************************" << std::endl;
+        std::cout << "      Please Create a Password with uppercase, /n      lowercase and a number" << std::endl;
+        std::cout << "      ******************************************" << std::endl;
+        std::cout << "      Please Create Your Password: " ;
+    }
+    else if (i == 0){
+        std::cout << "      ******************************************" << std::endl;
+        std::cout << "      User Exists Already" ;
+
+    }
+}
+
 void accessDenied() {
    
     std::cout << "      ******************************************" << std::endl;
