@@ -150,6 +150,33 @@ consolePrinter.cpp.s:
 	$(MAKE) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/consolePrinter.cpp.s
 .PHONY : consolePrinter.cpp.s
 
+createAccount.o: createAccount.cpp.o
+
+.PHONY : createAccount.o
+
+# target to build an object file
+createAccount.cpp.o:
+	$(MAKE) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/createAccount.cpp.o
+.PHONY : createAccount.cpp.o
+
+createAccount.i: createAccount.cpp.i
+
+.PHONY : createAccount.i
+
+# target to preprocess a source file
+createAccount.cpp.i:
+	$(MAKE) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/createAccount.cpp.i
+.PHONY : createAccount.cpp.i
+
+createAccount.s: createAccount.cpp.s
+
+.PHONY : createAccount.s
+
+# target to generate assembly for a file
+createAccount.cpp.s:
+	$(MAKE) -f CMakeFiles/HelloWorld.dir/build.make CMakeFiles/HelloWorld.dir/createAccount.cpp.s
+.PHONY : createAccount.cpp.s
+
 hash.o: hash.cpp.o
 
 .PHONY : hash.o
@@ -243,6 +270,9 @@ help:
 	@echo "... consolePrinter.o"
 	@echo "... consolePrinter.i"
 	@echo "... consolePrinter.s"
+	@echo "... createAccount.o"
+	@echo "... createAccount.i"
+	@echo "... createAccount.s"
 	@echo "... hash.o"
 	@echo "... hash.i"
 	@echo "... hash.s"

@@ -5,6 +5,7 @@ using namespace std;
 // Declaration of the functions from other files 
 void greet();
 void login();
+void createAccount();
 
 int getUserinput();
 void mainMenuSelection(int choice);
@@ -36,7 +37,7 @@ void mainMenuSelection(int choice){
         login();
     }
     else if (choice == 2){
-        //createAccount();
+        createAccount();
     }
     else if (choice == 0){
         int choice = getUserinput();

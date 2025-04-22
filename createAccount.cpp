@@ -1,10 +1,13 @@
 #include <iostream>
+#include <vector>
+#include <fstream>
+#include <sstream>
 
 using namespace std;
 
 string user;
-string salt;
-string hash;
+string saltNew;
+string hashNew;
 
 void createAccountPrompts(int i);
 
@@ -18,7 +21,7 @@ void createAccount(){
     bool newUsername = checkUserExists(username);
     if (newUsername == true){
         user = username;
-        createpassword();
+        createPassword();
     }
     else{
         createAccountPrompts(0);
@@ -46,10 +49,9 @@ bool checkUserExists(string username){
         while (std::getline(ss, item, ',')) {
             columns.push_back(item);
         }
-        cout << columns[0] << ":\n";
         // Check if row has at least 3 columns and the first one matches
         if (columns[0] == username) {
-            
+            MyReadFile.close();
             return false;
         }   
     }   
