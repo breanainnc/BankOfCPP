@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/mininet/ProgramCPP/HelloWorld/login.cpp
+iostream
+-
+string
+-
+fstream
+-
+sstream
+-
+vector
+-
+
