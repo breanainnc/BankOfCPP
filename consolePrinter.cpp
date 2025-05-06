@@ -36,7 +36,9 @@ void createAccountPrompts(int i){
     }
     else if (i == 2){
         std::cout << "      ******************************************" << std::endl;
-        std::cout << "      Please Create a Password with uppercase, /n      lowercase and a number" << std::endl;
+        std::cout << "      Please Create a Password with uppercase, \n      lowercase and a number" << std::endl;
+        std::cout << "      ******************************************" << std::endl;
+        std::cout << "      Password's must be 8 character minimum and\n      less than 16 characters" << std::endl;
         std::cout << "      ******************************************" << std::endl;
         std::cout << "      Please Create Your Password: " ;
     }

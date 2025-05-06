@@ -14,8 +14,6 @@ string hashPasswordWithSalt(const std::string& password, const std::string& salt
 
 bool checkIfUserExists(string username);
 
-
-
 void login(){
     requestUsername();
     string username;
@@ -34,7 +32,7 @@ void login(){
             cout << "  WRONG!!\n";
         }
     }
-    if(doesUserExist == false){
+    else {
         accessDenied();
     }
 }
@@ -50,22 +48,19 @@ bool checkIfUserExists(string username){
         string item;
         vector<string> columns;
 
-        while (std::getline(ss, item, ',')) {
+        while (getline(ss, item, ',')) {
             columns.push_back(item);
         }
-        cout << columns[0] << ":\n";
+        //cout << columns[0] << ":\n";
         // Check if row has at least 3 columns and the first one matches
         if (columns[0] == username) {
             salt = columns[1];
             pass = columns[2];
             MyReadFile.close();
             return true;
-        }       
-    }   
+        }
+    }  
     // Close the file
     MyReadFile.close();
     return false;
 }
-
-
-

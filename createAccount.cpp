@@ -11,6 +11,8 @@ string saltNew;
 string hashNew;
 
 void createAccountPrompts(int i);
+string hashPasswordWithSalt(const std::string& password, const std::string& salt);
+string generateSalt(size_t length = 16);
 
 bool checkUserExists(string username);
 void createPassword(string user);
@@ -21,19 +23,43 @@ void createAccount(){
     cin >> username;
     
     bool newUsername = checkUserExists(username);
-    /*
-    if (newUsername == true){
+    
+    if (newUsername == false){
         createPassword(username);
     }
     else{
-        createAccountPrompts(0);
-    }*/
-
-
+        cout << " \n This user name already exists!\n";
+        createAccount();
+    }
 }
 
 void createPassword(string  user){
     createAccountPrompts(2);
+    string password;
+    cin >> password;
+    
+}
+
+bool checkPasswordFormat(string password){
+    if (password.length() > 7 || password.length() < 16){
+        return false;
+    }
+    bool uppercase, lowercase, number = false;
+    for(int i = 0; i < password.length(); i++){
+        if(password[i] > 64 && password[i] < 91){
+            uppercase = true;
+        }
+        if(password[i] > 96 && password[i] < 123){
+            lowercase = true;
+        }
+        if(password[i] > 47 && password[i] < 58){
+            number = true;
+        }
+    }
+    if(uppercase && lowercase && number){
+        return true;
+    }
+    return false;
 }
 
 bool checkUserExists(string username){
@@ -47,16 +73,19 @@ bool checkUserExists(string username){
         string item;
         vector<string> columns;
 
-        while (std::getline(ss, item, ',')) {
+        while (getline(ss, item, ',')) {
            columns.push_back(item);
         }
         // Check if row has at least 3 columns and the first one matches
         if (columns[0] == username) {
             MyReadFile.close();
-            return false;
-        }   
+            return true;
+        }
+        if (columns[0] == ""){
+            break;
+        }
     }   
     // Close the file
     MyReadFile.close();
-    return true;
+    return false;
 }
