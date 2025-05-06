@@ -27,9 +27,7 @@ void login(){
         string password;
         cin >> password;  
         string test = hashPasswordWithSalt(password,salt);
-        cout << test << "\n"; 
-        cout << salt << "\n"; 
-        if (hashPasswordWithSalt(password,salt) == pass){
+        if (test == pass){
             cout << "  PASSWORD CORRECT!!\n";
         }
         else{
@@ -42,11 +40,10 @@ void login(){
 }
 
 bool checkIfUserExists(string username){
+    
     string input;
-    
     ifstream MyReadFile("../Users.txt");
-
-    
+   
     while (getline (MyReadFile, input)) {
 
         stringstream ss(input);
@@ -59,20 +56,12 @@ bool checkIfUserExists(string username){
         cout << columns[0] << ":\n";
         // Check if row has at least 3 columns and the first one matches
         if (columns[0] == username) {
-            cout << "               *** Found Username" << username << ":\n";
-            cout << "                Salt: " << columns[1] << "\n";
-            cout << "                Hash: " << columns[2] << "\n";
             salt = columns[1];
             pass = columns[2];
             MyReadFile.close();
             return true;
-        }
-
-
-    
-        
+        }       
     }   
-
     // Close the file
     MyReadFile.close();
     return false;
